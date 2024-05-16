@@ -32,3 +32,6 @@ pre-commit.sh
 
 #Storybook static build directory
 storybook-static
+
+#cache
+*.cache
