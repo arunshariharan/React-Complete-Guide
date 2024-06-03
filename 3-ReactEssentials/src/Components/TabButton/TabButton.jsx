@@ -1,15 +1,7 @@
-import { Children } from "react";
-
-export default function TabButton({children}) {
-  const handleClick = () => {
-    console.log("Clicked");
-  }
-  
+export default function TabButton({ children, onSelect }) {
   return (
     <li>
-      <button onClick={handleClick}>
-        {children}
-      </button>
+      <button onClick={onSelect}>{children}</button>
     </li>
   );
 }
