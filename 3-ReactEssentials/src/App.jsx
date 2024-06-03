@@ -1,3 +1,5 @@
+import reactImg from "./assets/react-core-concepts.png";
+
 const reactDescription = ["Fundamental", "Crucial", "Core"];
 
 const getRandomInt = (max) => {
@@ -8,7 +10,7 @@ function Header() {
   const descriptor = reactDescription[getRandomInt(2)];
   return (
     <header>
-      <img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
+      <img src={reactImg} alt="Stylized atom" />
       <h1>React Essentials</h1>
       <p>
         {descriptor} React concepts you will need for
