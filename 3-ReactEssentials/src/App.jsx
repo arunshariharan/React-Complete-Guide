@@ -1,15 +1,17 @@
 import { useState } from "react";
-import { CORE_CONCEPTS } from "./data";
+import { CORE_CONCEPTS, EXAMPLES } from "./data";
 import Header from "./Components/Header/Header";
 import CoreConcepts from "./Components/CoreConcepts/CoreConcepts";
 import TabButton from "./Components/TabButton/TabButton";
+import Examples from "./Components/Examples/Examples";
 
 function App() {
-  
-  const [selectedTopic, setSelectedTopic] = useState("Please select a Topic");
+  const [selectedTopic, setSelectedTopic] = useState(
+    <Examples {...EXAMPLES.components} />
+  );
 
   const handleSelect = (selectedButton) => {
-    setSelectedTopic(selectedButton);
+    setSelectedTopic(<Examples {...EXAMPLES[selectedButton]} />);
   };
 
   return (
@@ -36,7 +38,7 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          {selectedTopic}
+          <section id="examples">{selectedTopic}</section>
         </section>
       </main>
     </div>
