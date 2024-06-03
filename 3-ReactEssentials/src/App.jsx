@@ -21,6 +21,8 @@ function Header() {
   );
 }
 
+// Here the function params are destructred to take in only required params
+// Alternatively, you could just get "props" and then do props.image etc inside the function
 function CoreConcepts({ image, title, description }) {
   return (
     <li>
@@ -40,7 +42,10 @@ function App() {
         <section id="core-concepts">
           <ul>
             {CORE_CONCEPTS.map((concept) => (
-              <CoreConcepts {...concept} />
+              // Here since the properties of CORE_CONCEPTS are the same as the function that accepts it, 
+              // we can use the spread operator to pass in props this way  
+              // Alternatively, you would pass in <CoreConcepts title="concept.title" image="" descriotion="" />          
+              <CoreConcepts {...concept} /> 
             ))}
           </ul>
         </section>
