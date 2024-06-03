@@ -10,9 +10,14 @@ function App() {
     <Examples {...EXAMPLES.components} />
   );
 
+  const [selectedTab, setSelectedTab] = useState("components");
+
   const handleSelect = (selectedButton) => {
     setSelectedTopic(<Examples {...EXAMPLES[selectedButton]} />);
+    setSelectedTab(selectedButton);
   };
+
+  const setTopic = (topic, tab) => {};
 
   return (
     <div>
@@ -31,12 +36,30 @@ function App() {
         </section>
         <section id="examples">
           <menu>
-            <TabButton onSelect={() => handleSelect("components")}>
+            <TabButton
+              isSelected={selectedTab === "components"}
+              onSelect={() => handleSelect("components")}
+            >
               Components
             </TabButton>
-            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
-            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
-            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
+            <TabButton
+              isSelected={selectedTab === "jsx"}
+              onSelect={() => handleSelect("jsx")}
+            >
+              JSX
+            </TabButton>
+            <TabButton
+              isSelected={selectedTab === "props"}
+              onSelect={() => handleSelect("props")}
+            >
+              Props
+            </TabButton>
+            <TabButton
+              isSelected={selectedTab === "state"}
+              onSelect={() => handleSelect("state")}
+            >
+              State
+            </TabButton>
           </menu>
           <section id="examples">{selectedTopic}</section>
         </section>
