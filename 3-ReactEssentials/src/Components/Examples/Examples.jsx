@@ -8,7 +8,6 @@ import Tabs from "../Tabs/Tabs";
 const topics = ["components", "jsx", "props", "state"];
 
 export default function Examples() {
-  
   const [selectedTopic, setSelectedTopic] = useState(
     <TabContent {...EXAMPLES[topics[0]]} />
   );
@@ -23,15 +22,18 @@ export default function Examples() {
 
   return (
     <>
-      <Section title="Examples" id="examples" className="examples"> 
-        <Tabs button={topics.map((topic) => (
-              <TabButton
-                isSelected={selectedTab == topic}
-                onClick={() => handleSelect(topic)}
-              >
-                {topic.toLocaleUpperCase()}
-              </TabButton>
-            ))}>
+      <Section title="Examples" id="examples" className="examples">
+        <Tabs
+          ButtonsContainer="menu" // built in should be string, custom should be sent as {Section} or {var_name}
+          button={topics.map((topic) => (
+            <TabButton
+              isSelected={selectedTab == topic}
+              onClick={() => handleSelect(topic)}
+            >
+              {topic.toLocaleUpperCase()}
+            </TabButton>
+          ))}
+        >
           {selectedTopic}
         </Tabs>
       </Section>

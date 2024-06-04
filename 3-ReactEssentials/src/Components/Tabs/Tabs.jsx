@@ -1,10 +1,10 @@
-// Reusable tabs component that can be used anywhere within the code
-export default function Tabs({button, children}) {
+export default function Tabs({ button, children, ButtonsContainer }) {
+  // An alternate where you get the props in lowerCase
+  // const ButtonsContainer = buttonsContainer;
+  // The above allows users to pass in a type dynamically and set it as a wrapper
   return (
     <>
-      <menu>
-        {button}
-      </menu>
+      <ButtonsContainer>{button}</ButtonsContainer>
       {children}
     </>
   );
