@@ -1,6 +1,6 @@
 import Header from "./Components/Header/Header";
 import Concepts from "./Components/Concepts/Concepts";
-import Tabs from "./Components/Tabs/Tabs";
+import Examples from "./Components/Examples/Examples";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       <Header />
       <main>
         <Concepts />
-        <Tabs />
+        <Examples />
       </main>
     </>
   );
