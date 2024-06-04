@@ -19,12 +19,12 @@ export default function Tabs() {
 
   return (
     <>
-      <Section title="Examples" id="examples"> 
+      <Section title="Examples" id="examples" className="examples"> 
         <menu>
           {topics.map((topic) => (
             <TabButton
               isSelected={selectedTab == topic}
-              onSelect={() => handleSelect(topic)}
+              onClick={() => handleSelect(topic)}
             >
               {topic.toLocaleUpperCase()}
             </TabButton>
