@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { CORE_CONCEPTS, EXAMPLES } from "./data";
 import Header from "./Components/Header/Header";
 import CoreConcepts from "./Components/CoreConcepts/CoreConcepts";
@@ -20,7 +20,7 @@ function App() {
   const setTopic = (topic, tab) => {};
 
   return (
-    <div>
+    <Fragment>
       <Header />
       <main>
         <h2>Time to get started!</h2>
@@ -30,7 +30,7 @@ function App() {
               // Here since the properties of CORE_CONCEPTS are the same as the function that accepts it,
               // we can use the spread operator to pass in props this way
               // Alternatively, you would pass in <CoreConcepts title="concept.title" image="" descriotion="" />
-              <CoreConcepts {...concept} />
+              <CoreConcepts key={concept.title} {...concept} />
             ))}
           </ul>
         </section>
@@ -64,7 +64,7 @@ function App() {
           <section id="examples">{selectedTopic}</section>
         </section>
       </main>
-    </div>
+    </Fragment>
   );
 }
 
