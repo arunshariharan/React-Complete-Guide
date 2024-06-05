@@ -1,20 +1,15 @@
-export default function Players() {
+export default function Players({ players }) {
   return (
     <ol id="players">
-      <li>
-        <span className="player">
-          <span className="player-name">Player 1</span>
-          <span className="player-symbol">X</span>
-        </span>
-        <button>Edit</button>
-      </li>
-      <li>
-        <span className="player">
-          <span className="player-name">Player 2</span>
-          <span className="player-symbol">O</span>
-        </span>
-        <button>Edit</button>
-      </li>
+      {players.map((player) => (
+        <li>
+          <span className="player">
+            <span className="player-name">{player.name}</span>
+            <span className="player-symbol">{player.symbol}</span>
+          </span>
+          <button>Edit</button>
+        </li>
+      ))}
     </ol>
   );
 }
